@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment 
     {
-        PROJECT_ID = 'devops'
+        PROJECT_ID = 'devops-pankaj'
         CLUSTER_NAME = 'k8-demo-6'
         LOCATION = 'us-central1-c'
         CREDENTIALS_ID = 'devops-pankaj'
