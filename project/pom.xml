@@ -10,6 +10,10 @@
     <artifactId>project</artifactId>
     <packaging>war</packaging>
     <name>Project</name>
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
  <dependencies>
         <!-- runtime dependency -->
         <dependency>
