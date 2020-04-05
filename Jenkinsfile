@@ -37,7 +37,7 @@ pipeline{
             {
                 script 
                 {
-                    myapp = docker.build("harlalkap/k8s:${env.BUILD_ID}")
+                     myapp = docker.build("gcr.io/wired-climate-262921/mywebappgcr:${env.BUILD_ID}")
                 }
             }
         }
@@ -47,14 +47,14 @@ pipeline{
             {
                 script 
                 {
-                    docker.withRegistry("https://registry.hub.docker.com", "docker")
+                    docker.withRegistry("https://gcr.io", "devops-pankaj")
                     {
                         myapp.push("${env.BUILD_ID}")
                     }                
                 }
             }
         }
-        stage('Deploy to GKE') 
+        stage('Deploy') 
         {
             steps
             {
