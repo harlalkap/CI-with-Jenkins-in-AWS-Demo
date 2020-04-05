@@ -15,7 +15,7 @@ spec:
   spec:
    containers:
    - name: webapp1
-     image: harlalkap/k8s:tagversion
+     image: gcr.io/wired-climate-262921/mywebappgcr:tag
      ports:
      - containerPort: 8080
 ---
