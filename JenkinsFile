@@ -3,9 +3,9 @@ pipeline{
     environment 
     {
         PROJECT_ID = 'devops'
-        CLUSTER_NAME = 'kubernetes-cluster'
-        LOCATION = 'us-central1-a'
-        CREDENTIALS_ID = 'kubernetes'
+        CLUSTER_NAME = 'k8-demo-6'
+        LOCATION = 'us-central1-c'
+        CREDENTIALS_ID = 'devops-pankaj'
     }
     stages 
     {
@@ -37,7 +37,7 @@ pipeline{
             {
                 script 
                 {
-                    myapp = docker.build("goyal_madhu14/k8s:${env.BUILD_ID}")
+                    myapp = docker.build("harlalkap/k8s:${env.BUILD_ID}")
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline{
             {
                 script 
                 {
-                docker.withRegistry('https: //registry.hub.docker.com', 'Docker-hub-credentials') {
+                docker.withRegistry('https: //registry.hub.docker.com', 'docker') {
                 myapp.push("${env.BUILD_ID}")
                 }                
             }
