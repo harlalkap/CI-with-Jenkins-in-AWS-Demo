@@ -47,7 +47,7 @@ pipeline{
             {
                 script 
                 {
-                    docker.withRegistry("https://gcr.io", "devops-pankaj")
+                    docker.withRegistry("https://gcr.io", "gcr:devops-pankaj")
                     {
                         myapp.push("${env.BUILD_ID}")
                     }                
